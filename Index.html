@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playtrix OS</title>
+
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="/Assets/Styles/playtrix.css" />
+</head>
+
+<body class="playtrix-shell">
+
+  <!-- =============================================== -->
+  <!-- LANDING PAGE                                     -->
+  <!-- =============================================== -->
+  <header class="pt-home-header">
+    <h1 class="pt-home-title">PLAYTRIX OS</h1>
+    <p class="pt-home-tagline">A modern life-console for Alan Gallagher</p>
+  </header>
+
+  <main class="pt-home-main">
+    <section class="pt-home-section">
+      <p class="pt-home-lead">
+        Personal · Work · Civic · Creative · Systems
+        <br />
+        A unified method for life, work, mission, and order.
+      </p>
+
+      <button id="pt-enter-btn" class="pt-home-enter">
+        Enter Console
+      </button>
+    </section>
+  </main>
+
+  <!-- =============================================== -->
+  <!-- ACCESS PANEL (Hidden until Enter pressed)        -->
+  <!-- =============================================== -->
+  <div id="pt-lock" class="pt-lock-overlay hidden">
+    <div class="pt-lock-panel">
+      <h2 class="pt-lock-title">Access Required</h2>
+      <p class="pt-lock-text">
+        Enter your access code to open the Playtrix Console.
+      </p>
+
+      <form id="pt-lock-form" class="pt-lock-form">
+        <label for="pt-pass" class="pt-lock-label">Access code</label>
+        <input
+          id="pt-pass"
+          class="pt-lock-input"
+          type="password"
+          autocomplete="off"
+        />
+
+        <p id="pt-lock-error" class="pt-lock-error"></p>
+
+        <button type="submit" class="pt-lock-button">Unlock</button>
+      </form>
+
+      <p class="pt-lock-note">For your eyes only, Alan.</p>
+    </div>
+  </div>
+
+  <!-- =============================================== -->
+  <!-- GLOBAL FOOTER + CLOCK                            -->
+  <!-- =============================================== -->
+  <footer class="pt-footer">
+    <div class="pt-footer-accent"></div>
+    <div class="pt-footer-shell">
+      <p class="pt-footer-text">
+        Playtrix OS · Private System · v1.0 · 2025 Alan Walter Paul Gallagher. All Rights Reserved.
+      </p>
+      <div class="pt-console-clock">
+        <span id="pt-clock-time">--:--</span>
+        <span id="pt-clock-date">Loading…</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================== -->
+  <!-- SCRIPTS                                          -->
+  <!-- =============================================== -->
+  <script src="/Assets/Scripts/playtrix.js"></script>
+
+  <script>
+    /* ==========================================================
+       INDEX PAGE INTERACTION
+    ========================================================== */
+
+    const enterBtn = document.getElementById("pt-enter-btn");
+    const lockOverlay = document.getElementById("pt-lock");
+
+    // Show password overlay when Enter is pressed
+    enterBtn.addEventListener("click", () => {
+      lockOverlay.classList.remove("hidden");
+    });
+
+    // When unlocked successfully, redirect to console
+    document.addEventListener("playtrix-unlocked", () => {
+      window.location.href = "playtrix-console.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playtrix Console</title>
+
+  <!-- Main Playtrix styles -->
+  <link rel="stylesheet" href="Assets/Styles/playtrix.css" />
+</head>
+
+<body class="playtrix-shell">
+
+  <!-- ===================================================== -->
+  <!-- PLAYTRIX CONSOLE SHELL                               -->
+  <!-- ===================================================== -->
+  <div class="pt-shell">
+
+    <!-- Top bar -->
+    <header class="pt-shell-header">
+      <div class="pt-shell-title-block">
+        <h1 class="pt-shell-title">Playtrix Console</h1>
+        <p class="pt-shell-subtitle">
+          Personal · Work · Civic · Creative · Systems
+        </p>
+      </div>
+
+      <div class="pt-shell-status">
+        <span class="pt-status-pill">v1.0 · Playtrix Mate</span>
+      </div>
+    </header>
+
+    <!-- Main console area -->
+    <main class="pt-shell-main">
+
+      <!-- Grid of draggable cards -->
+      <section id="pt-card-grid" class="pt-card-grid" aria-label="Playtrix panels">
+
+        <!-- PERSONAL -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-personal">
+          <h2 class="pt-card-title">Personal</h2>
+          <p class="pt-card-text">
+            Life admin, health, home, prayer, routines.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Personal
+          </button>
+        </article>
+
+        <!-- WORK -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-work">
+          <h2 class="pt-card-title">Work</h2>
+          <p class="pt-card-text">
+            NHS, Digital, Private.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Work
+          </button>
+        </article>
+
+        <!-- CIVIC -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-civic">
+          <h2 class="pt-card-title">Civic</h2>
+          <p class="pt-card-text">
+            WayLight, WOSWOS, local missions, public-square work.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Civic
+          </button>
+        </article>
+
+        <!-- CREATIVE -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-creative">
+          <h2 class="pt-card-title">Creative</h2>
+          <p class="pt-card-text">
+            Writing, music, design, websites, experiments.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Creative
+          </button>
+        </article>
+
+        <!-- SYSTEMS -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-systems">
+          <h2 class="pt-card-title">Systems Centre</h2>
+          <p class="pt-card-text">
+            Playtrix, data lakes, backups, devices, finances.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Systems
+          </button>
+        </article>
+
+        <!-- CALENDAR -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-calendar">
+          <h2 class="pt-card-title">Calendar</h2>
+          <p class="pt-card-text">
+            Link to Outlook / master diary.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Calendar
+          </button>
+        </article>
+
+        <!-- TOOLS -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-tools">
+          <h2 class="pt-card-title">Tool Deck</h2>
+          <p class="pt-card-text">
+            MS / Google / coding / messaging / banking.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Tools
+          </button>
+        </article>
+
+        <!-- LIBRARY -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-library">
+          <h2 class="pt-card-title">LibraryCard</h2>
+          <p class="pt-card-text">
+            ServiceNow-lite / Kanban / WOSWOS missions.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Library
+          </button>
+        </article>
+
+        <!-- METHODS -->
+        <article class="pt-card" draggable="true" data-storage-key="pt-methods">
+          <h2 class="pt-card-title">Methods</h2>
+          <p class="pt-card-text">
+            WOSWOS · Agile · Kaizen · Lean · Benedictine rhythm.
+          </p>
+          <button class="pt-card-open" type="button">
+            Open Methods
+          </button>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- GLOBAL FOOTER + CLOCK -->
+    <footer class="pt-footer">
+      <div class="pt-footer-accent"></div>
+      <div class="pt-footer-shell">
+        <p class="pt-footer-text">
+          Playtrix OS · Private System · v1.0 · 2025 Alan Walter Paul Gallagher. All Rights Reserved.
+        </p>
+        <div class="pt-console-clock">
+          <span id="pt-clock-time">--:--</span>
+          <span id="pt-clock-date">Loading…</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="Assets/Scripts/playtrix.js"></script>
+</body>
+</html>

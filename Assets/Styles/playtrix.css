@@ -1,0 +1,691 @@
+/* ============================================================
+   PLAYTRIX OS · CORE STYLES
+   ============================================================ */
+ 
+:root {
+  /* Shell */
+  --pt-bg: #05070d;
+  --pt-bg-grad: radial-gradient(circle at top, #171c2d 0, #05070d 55%, #000 100%);
+  --pt-text-main: #f7f7ff;
+  --pt-text-soft: #c9ccdd;
+ 
+  /* 80s accent (cyan by default) */
+  --pt-accent-soft: #2df2ff;
+  --pt-accent: #4dfcff;
+ 
+  /* Borders & surfaces */
+  --pt-border-soft: rgba(255, 255, 255, 0.12);
+  --pt-border-strong: rgba(255, 255, 255, 0.24);
+  --pt-panel-bg: rgba(7, 10, 18, 0.9);
+  --pt-panel-soft: rgba(16, 22, 40, 0.9);
+  --pt-glow: 0 18px 45px rgba(0, 0, 0, 0.75);
+}
+ 
+/* GLOBAL SHELL */
+ 
+body.playtrix-shell {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--pt-text-main);
+  background: var(--pt-bg-grad);
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* Utility */
+ 
+.hidden {
+  display: none !important;
+}
+ 
+/* ============================================================
+   HOME / INDEX (optional front door)
+   ============================================================ */
+ 
+.pt-home-header {
+  text-align: center;
+  padding: 3rem 1.5rem 1rem;
+}
+ 
+.pt-home-title {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+ 
+.pt-home-tagline {
+  margin-top: 0.75rem;
+  color: var(--pt-text-soft);
+  font-size: 0.95rem;
+}
+ 
+.pt-home-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+}
+ 
+.pt-home-section {
+  max-width: 480px;
+  width: 100%;
+  background: var(--pt-panel-soft);
+  border-radius: 18px;
+  border: 1px solid var(--pt-border-soft);
+  box-shadow: var(--pt-glow);
+  padding: 2rem 2.25rem;
+  text-align: center;
+}
+ 
+.pt-home-lead {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  color: var(--pt-text-soft);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+ 
+.pt-home-enter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--pt-accent);
+  background: radial-gradient(circle at top, var(--pt-accent) 0, #c1fbff 55%, #6ac7d0 100%);
+  color: #020609;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s;
+}
+ 
+.pt-home-enter:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.75);
+}
+ 
+.pt-home-enter:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+ 
+.pt-home-footer {
+  padding: 0.75rem 1.5rem 1.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--pt-text-soft);
+}
+ 
+/* ============================================================
+   MAIN CONSOLE SHELL
+   ============================================================ */
+ 
+.pt-shell {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2.5rem auto 2.75rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+ 
+.pt-shell-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+ 
+.pt-shell-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+ 
+.pt-shell-title {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+ 
+.pt-shell-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--pt-text-soft);
+}
+ 
+.pt-shell-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.pt-status-pill {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--pt-border-strong);
+  background: rgba(5, 9, 20, 0.9);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+ 
+.pt-shell-main {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 55%);
+  border-radius: 22px;
+  border: 1px solid var(--pt-border-soft);
+  box-shadow: var(--pt-glow);
+  padding: 1.75rem 1.75rem 2rem;
+}
+ 
+/* ============================================================
+   CARD GRID
+   ============================================================ */
+ 
+.pt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+ 
+.pt-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(12, 18, 32, 0.96), rgba(5, 8, 18, 0.96));
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.1rem 1.25rem 1.2rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.8);
+  cursor: grab;
+  transition: transform 0.13s ease-out, box-shadow 0.13s ease-out, border-color 0.13s;
+}
+ 
+.pt-card:active {
+  cursor: grabbing;
+}
+ 
+.pt-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.9);
+}
+ 
+.pt-card-dragging {
+  opacity: 0.7;
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
+}
+ 
+.pt-card-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+ 
+.pt-card-text {
+  margin: 0 0 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--pt-text-soft);
+}
+ 
+.pt-card-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--pt-border-strong);
+  background: rgba(9, 14, 26, 0.95);
+  color: var(--pt-text-main);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.12s ease-out, transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+ 
+.pt-card-open:hover {
+  background: rgba(19, 28, 52, 0.96);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.85);
+}
+ 
+/* ============================================================
+   FOOTER · NEON 80s STRIP
+   ============================================================ */
+ 
+.pt-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  color: var(--pt-text-soft);
+  font-size: 0.75rem;
+}
+ 
+.pt-footer-accent {
+  height: 2px;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--pt-accent-soft) 40%,
+    var(--pt-accent) 60%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 6px var(--pt-accent-soft));
+}
+ 
+.pt-footer-text {
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+ 
+/* ============================================================
+   LOCK OVERLAY (for index.html)
+   ============================================================ */
+ 
+.pt-lock-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 55%),
+    rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(18px);
+}
+ 
+.pt-lock-panel {
+  width: min(420px, 92vw);
+  padding: 2.2rem 2.4rem 2.1rem;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(13, 18, 30, 0.96), rgba(5, 8, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.95);
+}
+ 
+.pt-lock-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+ 
+.pt-lock-text {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--pt-text-soft);
+}
+ 
+.pt-lock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+ 
+.pt-lock-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pt-text-soft);
+}
+ 
+.pt-lock-input {
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(7, 10, 20, 0.98);
+  color: var(--pt-text-main);
+  font-size: 0.88rem;
+  outline: none;
+}
+ 
+.pt-lock-input:focus {
+  border-color: var(--pt-accent-soft);
+  box-shadow: 0 0 0 1px rgba(45, 242, 255, 0.3);
+}
+ 
+.pt-lock-error {
+  min-height: 1em;
+  font-size: 0.78rem;
+  color: #ff8484;
+}
+ 
+.pt-lock-button {
+  margin-top: 0.4rem;
+  align-self: flex-start;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--pt-accent-soft);
+  background: radial-gradient(circle at top, var(--pt-accent-soft) 0, #137c8c 60%, #06353c 100%);
+  color: #01060a;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.9);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, filter 0.1s;
+}
+ 
+.pt-lock-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+ 
+.pt-lock-button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+ 
+.pt-lock-note {
+  margin-top: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--pt-text-soft);
+}
+ 
+/* Shake + fade */
+ 
+.pt-lock-shake {
+  animation: pt-shake 0.3s ease-in-out;
+}
+ 
+@keyframes pt-shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+ 
+.pt-lock-open {
+  animation: pt-fade-out 0.28s ease-out forwards;
+}
+ 
+@keyframes pt-fade-out {
+  to {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+ 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+ 
+@media (max-width: 768px) {
+  .pt-shell {
+    margin-top: 1.4rem;
+    margin-bottom: 1.75rem;
+  }
+ 
+  .pt-shell-main {
+    padding: 1.2rem 1.2rem 1.5rem;
+  }
+ 
+  .pt-shell-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .pt-home-section {
+    padding: 1.6rem 1.6rem 1.8rem;
+  }
+}
+
+/* ============================================================
+   TOOLS PAGE
+   ============================================================ */
+ 
+.pt-tools-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+ 
+.pt-tools-row {
+  padding: 0.75rem 0 1.2rem;
+}
+ 
+.pt-tools-row-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+ 
+.pt-tools-row-header h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+ 
+.pt-tools-row-header p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--pt-text-soft);
+}
+ 
+.pt-tools-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+ 
+.pt-tool-pill {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: radial-gradient(circle at top left,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.7));
+  border-radius: 999px;
+  padding: 0.32rem 0.8rem;
+  font-size: 0.78rem;
+  color: var(--pt-text-main);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: default;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s;
+}
+ 
+.pt-tool-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--pt-accent-soft);
+  box-shadow: 0 0 12px rgba(45, 242, 255, 0.4);
+}
+ 
+.pt-neon-divider {
+  margin-top: 1rem;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(45, 242, 255, 0.7) 35%,
+    rgba(77, 252, 255, 1) 50%,
+    rgba(45, 242, 255, 0.7) 65%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 10px rgba(45, 242, 255, 0.6));
+}
+ 
+@media (max-width: 768px) {
+  .pt-tools-row {
+    padding-bottom: 1.4rem;
+  }
+}
+
+/* drag + drop states for tool pills */
+ 
+.pt-tool-pill {
+  cursor: grab;
+}
+ 
+.pt-tool-pill:active {
+  cursor: grabbing;
+}
+ 
+.pt-tool-pill-dragging {
+  opacity: 0.7;
+  transform: scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.9);
+}
+ 
+.pt-tool-pill-drop-target {
+  border-color: var(--pt-accent-soft);
+  box-shadow: 0 0 12px rgba(45, 242, 255, 0.6);
+}
+ 
+.pt-tool-linked {
+  border-color: var(--pt-accent-soft);
+}
+
+.pt-tools-row {
+  padding: 0.75rem 0 1.2rem;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+}
+
+.pt-tools-row-dragging {
+  opacity: 0.75;
+  transform: translateY(2px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Make row headers draggable + give a visual hint */
+.pt-tools-row-header[draggable="true"] {
+  cursor: move;
+}
+
+/* Row being dragged */
+.pt-tools-row-dragging {
+  opacity: 0.75;
+  transform: translateY(2px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure header can hold title + add button nicely */
+.pt-tools-row-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* "+ Add tool" button */
+.pt-tools-add {
+  border: none;
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--pt-text-soft, #c5c8d8);
+  box-shadow: 0 0 0 1px rgba(116, 178, 255, 0.4);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.pt-tools-add:hover {
+  box-shadow:
+    0 0 0 1px rgba(116, 178, 255, 0.7),
+    0 0 18px rgba(77, 252, 255, 0.35);
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   PLAYTRIX · CLOCK BAR
+========================================================== */
+
+.pt-console-clock {
+  width: 100%;
+  padding: 0.75rem 0;
+  margin-top: 2rem;
+  text-align: center;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+
+  color: var(--pt-text-main);
+  opacity: 0.75;
+
+  border-top: 1px solid rgba(116, 178, 255, 0.25);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  user-select: none;
+}
+
+.pt-console-clock span {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#pt-clock-time {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+}
+
+
+/* ==========================================================
+   PLAYTRIX · GLOBAL FOOTER + CLOCK
+========================================================== */
+
+.pt-footer-shell {
+  width: 100%;
+  padding: 1.25rem 0 2rem;
+  text-align: center;
+  color: var(--pt-text-main);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.pt-footer-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
+}
+
+/* neon line already above in your layout; leave that as-is */
+
+.pt-console-clock {
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.pt-console-clock span {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#pt-clock-time {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+}
+
