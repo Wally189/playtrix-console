@@ -1,0 +1,15 @@
+:root {
+  --wl-accent: #2a7fa3;
+  --wl-accent-soft: rgba(42, 127, 163, 0.12);
+  --pt-bg: var(--wl-paper);
+  --pt-bg-grad: none;
+  --pt-text-main: var(--wl-ink);
+  --pt-text-soft: var(--wl-muted);
+  --pt-accent: var(--wl-accent);
+  --pt-accent-soft: var(--wl-accent-soft);
+  --pt-border-soft: var(--wl-rule);
+  --pt-border-strong: var(--wl-rule);
+  --pt-panel-bg: #ffffff;
+  --pt-panel-soft: #ffffff;
+  --pt-glow: var(--wl-shadow);
+}

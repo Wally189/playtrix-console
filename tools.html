@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playtrix · Tools Deck</title>
 
-  <link rel="stylesheet" href="Assets/Styles/playtrix.css"
-" />
+    <link rel="stylesheet" href="assets/css/wl-core.css" />
+  <link rel="stylesheet" href="assets/css/site-theme.css" />
+  <link rel="stylesheet" href="Assets/Styles/playtrix.css" />
+  <link rel="icon" href="assets/img/irish-cross.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/irish-cross.svg" />
 </head>
 
 <body class="playtrix-shell">
@@ -170,21 +173,39 @@
     </main>
 
     <!-- GLOBAL FOOTER + CLOCK -->
-    <footer class="pt-footer">
-      <div class="pt-footer-accent"></div>
-      <div class="pt-footer-shell">
-        <p class="pt-footer-text">
-          Playtrix OS · Private System · v1.0 · 2025 Alan Walter Paul Gallagher. All Rights Reserved.
-        </p>
-        <div class="pt-console-clock">
-          <span id="pt-clock-time">--:--</span>
-          <span id="pt-clock-date">Loading…</span>
-        </div>
-      </div>
-    </footer>
+    
 
   </div>
 
   <script src="Assets/Scripts/playtrix.js"></script>
+  <script src="assets/js/wl-core.js" defer></script>
+<footer class="wl-footer">
+  <div class="wl-footer__grid">
+    <div class="wl-footer__left">
+      <div class="wl-footer__line">
+        <span><strong>Dies</strong>: <span data-date></span></span>
+        <a class="wl-footer__info" href="https://alanwpgallagher.com/information.html" aria-label="About Dies">i</a>
+      </div>
+      <div class="wl-footer__meta">
+        <span>&copy; <span id="year" data-year></span> Bristol, UK &amp; Letterkenny, Ireland</span>
+        <span>&middot;</span>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="wl-footer__center">
+      <em>Ora et labora.</em>
+    </div>
+    <div class="wl-footer__right">
+      <div class="wl-footer__line">
+        <span><strong>Hora</strong>: <span data-hora></span></span>
+        <a class="wl-footer__info" href="https://alanwpgallagher.com/information.html" aria-label="About Hora">i</a>
+      </div>
+      <div class="wl-footer__actions">
+        <button class="wl-footer__share" type="button" data-share>Share</button>
+        <span class="wl-footer__hint" data-share-hint aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
