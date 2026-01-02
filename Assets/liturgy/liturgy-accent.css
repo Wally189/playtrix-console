@@ -1,0 +1,28 @@
+:root {
+  --wl-liturgy-accent: #2f7d4e;
+}
+
+.site-header,
+.pt-shell-header,
+.tce-header,
+.pt-header {
+  border-top: 3px solid var(--wl-liturgy-accent);
+}
+
+a {
+  text-decoration-color: var(--wl-liturgy-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible {
+  outline-color: var(--wl-liturgy-accent);
+}
+
+button:hover,
+.btn:hover,
+.wl-footer__share:hover {
+  box-shadow: 0 0 0 2px var(--wl-liturgy-accent);
+}
